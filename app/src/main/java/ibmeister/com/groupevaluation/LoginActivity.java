@@ -5,11 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class LoginActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -26,6 +32,13 @@ public class LoginActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Parse.enableLocalDatastore(this); // Please delete the parse lines when working on welcome screen. This is for testing purposes.
+        Parse.initialize(this);
+
+        ParseObject TestClass = new ParseObject("TestClass"); // Parse backend test.
+        TestClass.put("TestColumn", "ProjectX");
+        TestClass.saveInBackground();
     }
 
     @Override

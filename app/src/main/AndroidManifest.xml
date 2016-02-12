@@ -18,6 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="7BeZIuACFWvmNkJIdTsC1DBNtJNfErNHAHKDXxqf" /> <!-- Parse metadata -->
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="OvOlqntOgLurrUJfTx9zbEcs2OFO7oND5nlAe8qM" />
+
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Internet access declaration -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
