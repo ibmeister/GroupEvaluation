@@ -26,4 +26,6 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'com.parse:parse-android:1.+'
+    compile 'com.parse:parseui-login-android:0.0.1' //Parse Login dependencies
+    compile 'com.parse:parseui-widget-android:0.0.1'
 }

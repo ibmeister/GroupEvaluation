@@ -24,6 +24,15 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this);
+
+
+        ParseObject TestClass = new ParseObject("TestClass"); // Parse backend test.
+        TestClass.put("TestColumn", "GroupEv");
+        TestClass.saveInBackground();
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,12 +42,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Parse.enableLocalDatastore(this); // Please delete the parse lines when working on welcome screen. This is for testing purposes.
-        Parse.initialize(this);
-
-        ParseObject TestClass = new ParseObject("TestClass"); // Parse backend test.
-        TestClass.put("TestColumn", "ProjectX");
-        TestClass.saveInBackground();
     }
 
     @Override
